@@ -3,7 +3,7 @@
 st-blank
 ===
 
-Hi. I'm a starter theme called `_st-blank`, if you like. I'm a theme meant for starting point
+Hi. I'm a starter theme called `st-blank`, if you like. I'm a theme meant for starting point
 
 * A just right amount of lean, well-commented, modern, HTML5 templates.
 * A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
