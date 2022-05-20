@@ -1,0 +1,918 @@
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #404040;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poiret One", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
+  // margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5em;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", courier, monospace;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;  
+}
+
+figure {
+  margin: 1em 0;
+}
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+  color: $primary_color;
+  text-decoration: none;
+}
+
+a:visited {
+  color: lighten($dark_color, 30);
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: darken($primary_color, 10);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/* Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #e6e6e6;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+  border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  color: #111;
+}
+
+select {
+  border: 1px solid #ccc;
+}
+
+textarea {
+  width: 100%;
+}
+
+/* Button
+--------------------------------------------- */
+.primary-btn {
+  display: inline-block;
+
+  //font-family: "Play", sans-serif;
+  //font-weight: 700;
+  padding: 14px 32px 12px;
+  color: $secondary_color;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    text-decoration: none;
+    color: $light_color;
+
+    &:before {
+      height: 100%;
+      width: 100%;
+    }
+
+    &:after {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    border-left: 2px solid $primary_color;
+    border-top: 2px solid $primary_color;
+    content: "";
+    z-index: -1;
+    @include transition(all 0.5s 0.1s);
+  }
+
+  &:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 30px;
+    width: 30px;
+    border-right: 2px solid $secondary_color;
+    border-bottom: 2px solid $secondary_color;
+    content: "";
+    z-index: -1;
+    -webkit-transition: all, 0.7s;
+    transition: all, 0.7s;
+  }
+
+}
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 100%;
+      left: -999em;
+      z-index: 99999;
+
+      ul {
+        left: -999em;
+        top: 0;
+      }
+    }
+  }
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+  display: block;
+  left: auto;
+}
+
+// .main-navigation ul ul a {
+
+// }
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
+}
+
+.main-navigation li {
+  position: relative;
+}
+
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation ul {
+    display: flex;
+  }
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+  display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  text-align: end;
+  flex: 1 0 50%;
+}
+
+/* Simple Pure CSS Dropdown 
+------------------------------------------ */
+#primary-menu {
+  position: relative;
+  list-style: none;
+  background: transparent;
+  font-weight: 400;
+  font-size: 0;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  li {
+    font-size: 0.8rem;
+    display: inline-block;
+    //background: $light_color;
+    position: relative;
+    padding: 15px 0;
+    cursor: pointer;
+    z-index: 5;
+    min-width: $menu-min-width;
+  }
+
+  .dropdown {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 48px;
+    div {
+      @include transform(translate(0, -100%));
+      @include transition(all 0.5s 0.1s);
+      background: $light_color;
+      position: relative;
+    }
+    li {
+      margin: 0;
+      padding: 0;
+      @include transition(all 0.3s);
+      &:hover {
+        @include transition(all 0.3s);
+        @include gradient_bg();
+      }
+      a {
+        display: block;
+        height: 4em;
+        line-height: 4em;
+        @include transition(all 0.3s);
+        &:hover {
+          @include transition(all 0.3s);
+          color: $light_color;
+          font-size: 1.25em;
+        }
+      }
+    }
+  }
+}
+
+#marker {
+  height: 6px;
+  @include gradient_bg();
+  position: absolute;
+  bottom: 0;
+  width: $menu-min-width;
+  z-index: 2;
+  @include transition(all 0.35s);
+}
+
+@for $i from 1 through 4 {
+  #primary-menu li:nth-child(#{$i}) {
+    &:hover ul div {
+      @include transform(translate(0, 0));
+    }
+    &:hover ~ #marker {
+      @include transform(translate(#{(-1 + $i) * $menu-min-width}, 0));
+    }
+  }
+}
+
+/* Homepage
+--------------------------------------------- */
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+  display: block;
+}
+
+.post,
+.page {
+  margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/* Sliders
+--------------------------------------------- */
+/* Slideshow container */
+.sliders {
+  max-width: 1920px;
+  position: relative;
+  //margin: auto;
+}
+
+.slider {display: none
+  img {
+    vertical-align: middle;    
+  }
+  .slider-header {
+    position: relative;
+    padding-right: 1.5em;
+    flex: 3;
+  }
+  .slider-body {
+    padding-left: 1.5em;
+    flex: 2;
+  }
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: $dark_color;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  color: $light_color;
+  text-decoration: none;
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.slider-title {
+  //color: #f2f2f2;
+  font-size: 2em;
+  //padding: 8px 12px;
+ // position: absolute;
+//bottom: 8px;
+ // width: 100%;
+  //text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.slide-number {
+  position: absolute;
+  color: $light_color;
+  font-size: .75em;
+  margin: 0;
+  padding: 1em;
+  //position: absolute;
+  //top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.indicators {
+  text-align: center;
+  .indicator {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 2em .25em 0;
+    background-color: $dark_color;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+}
+
+.indicators .active, .indicator:hover {
+  background-color: $light_color;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Cards
+--------------------------------------------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25em;
+  margin-bottom: 3.75em;
+  img {
+    @include transition(all 0.3s);
+    opacity: 0.5;
+    &:hover {
+      @include transition(all 0.3s);
+      opacity: 1;
+    }
+  }
+  a{
+    text-decoration: none;
+   // background-color: lighten($primary_color, 20);
+    color: darken($light_color, 20); 
+    &:hover {
+      opacity: 1;
+    }
+  }
+  h2 {
+    color: lighten($primary_color, 20);
+    @include transition(all 0.3s);
+    &:hover {
+      @include transition(all 0.3s);
+      color: $primary_color;
+    }
+  }
+
+}
+
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  background: white;
+  cursor: pointer;
+  @include transition(all 0.3s);  
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    @include transition(all 0.3s);    
+    @include transform(scale(1.15));
+  }  
+}
+
+.card-content {
+  padding: 2px 16px;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.bypostauthor {
+  display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 0 0 1.5em;
+  background: white;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  select {
+    max-width: 100%;
+  }
+
+  h2 {
+    color: $light_color;
+    text-align: center;
+    height: 2em;
+    text-shadow: 2px 2px 8px $dark_color;
+    line-height: 2em;
+    background: linear-gradient(45deg, $primary_color, $secondary_color);
+  }
+
+  li {
+    height: 2.5em;
+    line-height: 2.5em;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-image: linear-gradient(45deg, $primary_color, $secondary_color) 1;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      background: transparent;
+      @include transition(all 0.3s);
+      &:hover {
+        background: linear-gradient(45deg, $primary_color, $secondary_color);
+        color: $light_color;
+        padding-left: 1em;
+        @include transition(all 0.3s);
+      }
+    }
+  }
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+  display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wp-caption-text {
+    margin: 0.8075em 0;
+  }
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+  margin-bottom: 1.5em;
+  display: grid;
+  grid-gap: 1.5em;
+}
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.gallery-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+  display: block;
+}
+
+@import "plugins";
+
+@import "utilities";
+
+/* Accessibility
+--------------------------------------------- */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+  /*rtl:ignore*/
+  float: left;
+
+  /*rtl:ignore*/
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.alignright {
+  /*rtl:ignore*/
+  float: right;
+
+  /*rtl:ignore*/
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+}
+
+/* Mediaqueries
+--------------------------------------------- */
+@media screen and (max-width: 120em) { //1920px default
+  .cards {
+    .card {
+      width: 31%;
+    }
+  }
+}
+
+@media screen and (max-width: 90em) {  //1440px default
+
+  .cards {
+    .card {
+      width: 48%;
+    }
+  }
+
+}
+
+@media screen and (max-width: 60em) {// 960px
+
+  .content-wrapper {
+    gap: 0;    
+  }
+
+  .slider {    
+    .slider-title {
+      text-align: center;
+      margin-top: 1.5em;
+    }
+    .primary-btn{
+      width: 100%;
+    }
+    flex-direction: column;
+    img {
+      width: 100%;
+    }
+    .slider-header{
+      padding-right: 0;
+    }
+  }
+  .widget {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 40em) {//640px
+  .cards {
+    .card {
+      width: 100%;
+    }
+  }
+  body {
+    font-size: 90%;
+  }
+
+  .prev, .next {font-size: 11px}
+}

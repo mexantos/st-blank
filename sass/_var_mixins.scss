@@ -1,0 +1,25 @@
+$primary_color: #c6538c;
+$secondary_color: orange;
+$accent_color: rgb(0, 172, 184);
+$dark_color: #242424; // res #121212
+$light_color: #dbdbdb; // res #ededed
+$menu-min-width: 100px;
+
+@mixin transform($value) {
+  -webkit-transform: ($value);
+  -moz-transform: ($value);
+  -ms-transform: ($value);
+  transform: ($value);
+}
+
+@mixin transition($value) {
+  -webkit-transition: ($value);
+  -moz-transition: ($value);
+  -ms-transition: ($value);
+  transition: ($value);
+}
+
+@mixin gradient_bg($col1:$primary_color, $col2:$secondary_color) {
+  background: $col1 !important;
+  background: linear-gradient(45deg, $col1 0%, $col2 100%) !important;
+}

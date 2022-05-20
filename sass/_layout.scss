@@ -1,0 +1,98 @@
+.full-width {
+    padding: 3.75em 0;
+}
+.about,
+.site-header, 
+.sliders, 
+.content-wrapper, 
+.site-footer {
+    margin: 0 auto;
+    max-width: 1920px;
+    width: 85%;
+}
+
+.site-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo {
+
+    margin-bottom: 1.25em;
+    
+    img {
+        width: 120px;
+    }
+
+}
+
+.site-title, 
+.site-description {
+    text-indent: -9999px;
+    display: none;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 1.25em;    
+}
+
+.site-main {
+    flex: 2.2;
+}
+
+.widgets {
+    display: flex;
+    flex-direction: column;
+    .widget p {
+        padding: 0 1em;
+    }
+}
+
+.widget-area {
+    //background: lighten($dark_color, 40);
+    flex: 1;
+
+}
+
+.fw-header {
+    color: lighten($dark_color, 5);
+    background: darken($light_color, 5);
+}
+
+.fw-sliders {
+    background: lighten($dark_color, 5);
+    color: darken($light_color, 5);
+}
+
+.fw-content {
+    background: lighten( $light_color, 5);
+    color: inherit;
+}
+
+.fw-footer {
+    background: lighten($dark_color, 5);
+    text-align: center;
+    color: darken($light_color, 5);
+}
+
+@media screen and (max-width: 120em) {
+
+}
+
+@media screen and (max-width: 90em) {
+
+}
+
+@media screen and (max-width: 60em) {
+
+	.content-wrapper {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 30em) {
+
+}
