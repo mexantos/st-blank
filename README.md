@@ -1,4 +1,4 @@
-[![Build Status](https://sangtuah.com/)
+[Sangtuah](https://sangtuah.com/)
 
 st-blank
 ===
